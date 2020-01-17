@@ -3,7 +3,6 @@
 # Django
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import RegexValidator
 
 # Utilities
 from api.utils.models import GuatuduModel
@@ -18,19 +17,12 @@ class User(GuatuduModel, AbstractUser):
             'unique': 'A user with that email already exists.'
         }
     )
-
-    phone_regex = RegexValidator(
-        regex=r'\+?1?\d{9,15}$',
-        message='Phone nubmer must be entered in the formar: +999999999. Up to 15 digits allowed.'
-    )
-    
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
     
     is_client = models.BooleanField(
         'client',
         default=True,
         help_text=(
-            'Hlelp easily distinguish uysers and perform queries.'
+            'Help easily distinguish users and perform queries.'
             'Clients are the main type user.'
         )
     )
@@ -41,8 +33,12 @@ class User(GuatuduModel, AbstractUser):
         help_text= 'Set to true when the user have verified its email address.'
     )
 
+    facebook_id = models.CharField(blank=True, max_length=255)
+
+    google_id = models.CharField(blank=True, max_length=255)
+
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     def __str__(self):
         """ Return username"""

@@ -2,6 +2,7 @@
 
 # Django
 from django.db import models
+from django.core.validators import RegexValidator
 
 # Utilities
 from api.utils.models import GuatuduModel
@@ -18,15 +19,12 @@ class Profile(GuatuduModel):
         null=True
     )
 
-    biography = models.TextField(max_length=500, blank=True)
-
-    # Stats
-    rides_taken = models.PositiveIntegerField(default=0)
-    rides_offered = models.PositiveIntegerField(default=0)
-    reputation = models.FloatField(
-        default=5.0,
-        help_text="Users's reputation based on the ides taken and offered"
+    phone_regex = RegexValidator(
+        regex=r'\+?1?\d{9,15}$',
+        message='Phone nubmer must be entered in the formar: +999999999. Up to 15 digits allowed.'
     )
+    
+    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
 
     def __str__(self):
         """ Return user string representation"""
