@@ -7,9 +7,6 @@ from django.core.validators import RegexValidator
 # Utilities
 from api.utils.models import BaseModel
 
-#Models
-from models import Business
-
 class AdminProfile(BaseModel):
     """ Admin Profile model. """
 

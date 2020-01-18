@@ -6,10 +6,10 @@ from django.db import models
 # Utilities
 from api.utils.models import BaseModel
 
-class Role(BaseModel):
-    """ Permission model XD"""
+class Permission(BaseModel):
+    """ Permission model"""
 
-    name = models.CharField(max_length = 150)
+    name = models.CharField(max_length=150)
 
     def __str__(self):
         """ Return permission string representation"""
