@@ -7,8 +7,8 @@ from django.core.validators import RegexValidator
 # Utilities
 from api.utils.models import BaseModel
 
-class Profile(BaseModel):
-    """ Profile model. """
+class UserProfile(BaseModel):
+    """ User Profile model. """
 
     user = models.OneToOneField('users.User', on_delete=models.CASCADE)
 
