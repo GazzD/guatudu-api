@@ -44,9 +44,9 @@ class User(BaseModel, AbstractUser):
         db_table = 'users'
 
     def __str__(self):
-        """ Return username"""
+        """ Return email"""
         return self.email
     
     def get_short_name(self):
-        """ Return username"""
+        """ Return email"""
         return self.email

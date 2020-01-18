@@ -21,7 +21,7 @@ class Profile(BaseModel):
 
     phone_regex = RegexValidator(
         regex=r'\+?1?\d{9,15}$',
-        message='Phone nubmer must be entered in the formar: +999999999. Up to 15 digits allowed.'
+        message='Phone nubmer must be entered in the format : +999999999. Up to 15 digits allowed.'
     )
 
     phone_number = models.CharField(
