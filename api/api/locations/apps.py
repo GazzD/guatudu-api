@@ -1,4 +1,4 @@
-""" Users app. """
+""" Locations app. """
 
 # Django
 from django.apps import AppConfig
