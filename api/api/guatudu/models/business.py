@@ -7,13 +7,12 @@ from django.db import models
 from api.utils.models import BaseModel
 
 class Business(BaseModel):
-    """ Role model. """
+    """ Business model. """
 
     name = models.CharField(max_length = 150)
     admin_profiles = models.ManyToManyField('guatudu.AdminProfile')
-    
 
     def __str__(self):
-        """ Return user string representation"""
-        return str(self.user)
+        """ Return business string representation"""
+        return str(self.name)
     

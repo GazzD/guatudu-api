@@ -7,14 +7,12 @@ from django.db import models
 from api.utils.models import BaseModel
 
 class AdminBusiness(BaseModel):
-    """ Role model. """
+    """ AdminBusiness model. """
 
-    name = models.CharField(max_length = 150)
     admin = models.ForeignKey('guatudu.AdminProfile', on_delete=models.CASCADE)
     business = models.ForeignKey('guatudu.Business', on_delete=models.CASCADE)
     
-
     def __str__(self):
-        """ Return user string representation"""
-        return str(self.user)
+        """ Return admin bussiness string representation"""
+        return str(self.admin) + ' ' + str(self.business)
     

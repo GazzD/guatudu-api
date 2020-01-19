@@ -14,6 +14,6 @@ class AdminProfile(BaseModel):
     role = models.ForeignKey('users.Role', on_delete=models.CASCADE)
     
     def __str__(self):
-        """ Return user string representation"""
+        """ Return Admin Profile string representation"""
         return str(self.user)
     

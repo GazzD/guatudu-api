@@ -1,4 +1,4 @@
-""" Users app. """
+""" Guatudu app. """
 
 # Django
 from django.apps import AppConfig

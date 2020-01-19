@@ -11,7 +11,6 @@ class Role(BaseModel):
 
     name = models.CharField(max_length = 150)
     permissions = models.ManyToManyField('users.Permission')
-    
 
     def __str__(self):
         """ Return user string representation"""
