@@ -38,9 +38,6 @@ class UserProfile(BaseModel):
     )
 
     city = models.ForeignKey('locations.City', on_delete=models.CASCADE)
-    
-    
-    
 
     def __str__(self):
         """ Return user string representation"""
