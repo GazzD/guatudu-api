@@ -43,3 +43,5 @@ class UserProfile(BaseModel):
         """ Return user string representation"""
         return str(self.user)
     
+    class Meta:
+        db_table = 'user_profiles'

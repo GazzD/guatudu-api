@@ -15,3 +15,5 @@ class Permission(BaseModel):
         """ Return permission string representation"""
         return str(self.name)
     
+    class Meta:
+        db_table = 'permissions'

@@ -4,9 +4,9 @@
 from django.urls import path
 
 # Views
-from api.locations.views import LocationAPIView
+from api.locations.views import CountryAPIView
 
 urlpatterns = [
-    path('locations',LocationsAPIView.as_view(). namespace = "locations")
+    path('locations',CountryAPIView.as_view(), name='countries')
 
 ]

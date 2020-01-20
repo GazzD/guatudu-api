@@ -15,4 +15,7 @@ class AdminBusiness(BaseModel):
     def __str__(self):
         """ Return admin bussiness string representation"""
         return str(self.admin) + ' ' + str(self.business)
+
+    class Meta:
+        db_table = 'admin_business'
     

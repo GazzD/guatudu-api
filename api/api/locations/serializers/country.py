@@ -7,6 +7,18 @@ from rest_framework.validators import UniqueValidator
 #Model
 from api.locations.models import Country
 
+class CountryModelSerializer(serializers.ModelSerializer):
+    """Country Model Serializer"""
+
+    class Meta:
+        """Meta class"""
+        model = Country
+        fields = (
+            'id',
+            'name',
+            'image'
+        )
+
 class CountrySerializer(serializers.Serializer):
     """Country Serializer"""
 
@@ -22,7 +34,7 @@ class CreateCountrySerializer(serializers.Serializer):
             UniqueValidator(queryset=Country.objects.all())
         ]
     )
-    image = serializers.FilePathField()
+    image = serializers.FilePathField(required = False)
 
     def create(self, data):
         return Country.objects.create(**data)

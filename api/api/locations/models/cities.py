@@ -18,3 +18,6 @@ class City(BaseModel):
     def __str__(self):
         """ Return city string representation"""
         return str(self.name)
+    
+    class Meta:
+        db_table = 'cities'

@@ -16,4 +16,7 @@ class AdminProfile(BaseModel):
     def __str__(self):
         """ Return Admin Profile string representation"""
         return str(self.user)
+
+    class Meta:
+        db_table = 'admin_profiles'
     

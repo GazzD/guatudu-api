@@ -16,3 +16,6 @@ class Role(BaseModel):
         """ Return user string representation"""
         return str(self.name)
     
+    class Meta:
+        db_table = 'roles'
+    
