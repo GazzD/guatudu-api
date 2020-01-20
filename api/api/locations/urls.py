@@ -1,12 +1,15 @@
 """Locations Urls"""
 
-#Django
-from django.urls import path
+# Django
+from django.urls import path, include
+
+# Django Rest Framework
+from rest_framework.routers import DefaultRouter
 
 # Views
-from api.locations.views import CountryAPIView
+from api.locations.views import countries as country_views
 
-urlpatterns = [
-    path('locations',CountryAPIView.as_view(), name='countries')
+router = DefaultRouter
+router.register(r'countries', country_views.CountryViewSet, basename='country')
 
-]
+urlpatterns = router.urls
