@@ -1,12 +1,12 @@
-argon2-cffi==19.2.0
-asgiref==3.2.3
-cffi==1.13.2
-Django==3.0.2
-django-environ==0.4.5
-djangorestframework==3.11.0
-Pillow==7.0.0
-psycopg2-binary==2.8.4
-pycparser==2.19
-pytz==2019.3
-six==1.14.0
+Django==3.0.2 --hash=sha256:4f2c913303be4f874015993420bf0bd8fd2097a9c88e6b49c6a92f9bdd3fb13a
+argon2-cffi==19.2.0 --hash=sha256:e27488da690afac92e87cb61ba9cf9a22bff790413f55655ad017456cd58f22c
+asgiref==3.2.3 --hash=sha256:ea448f92fc35a0ef4b1508f53a04c4670255a3f33d22a81c8fc9c872036adbe5
+cffi==1.13.2 --hash=sha256:6471a82d5abea994e38d2c2abc77164b4f7fbaaf80261cb98394d5793f11b12a
+django-environ==0.4.5 --hash=sha256:c57b3c11ec1f319d9474e3e5a79134f40174b17c7cc024bbb2fad84646b120c4
+djangorestframework==3.11.0 --hash=sha256:05809fc66e1c997fd9a32ea5730d9f4ba28b109b9da71fccfa5ff241201fd0a4
+Pillow==7.0.0 --hash=sha256:87269cc6ce1e3dee11f23fa515e4249ae678dbbe2704598a51cee76c52e19cda
+psycopg2-binary==2.8.4 --hash=sha256:b73ddf033d8cd4cc9dfed6324b1ad2a89ba52c410ef6877998422fcb9c23e3a8
+pycparser==2.19 --hash=sha256:a988718abfad80b6b157acce7bf130a30876d27603738ac39f140993246b25b3
+pytz==2019.3 --hash=sha256:1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d
+six==1.14.0 --hash=sha256:8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c
 sqlparse==0.3.0
