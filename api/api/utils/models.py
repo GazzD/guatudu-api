@@ -3,7 +3,7 @@
 # Django
 from django.db import models
 
-class GuatuduModel(models.Model):
+class BaseModel(models.Model):
     """ Base model. """
     
     created = models.DateTimeField(
