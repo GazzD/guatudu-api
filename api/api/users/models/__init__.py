@@ -1,2 +1,3 @@
 from .users import User
-from .profiles import Profile
+from .roles import Role
+from .permissions import Permission
