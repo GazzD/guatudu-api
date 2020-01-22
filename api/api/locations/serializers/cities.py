@@ -2,13 +2,16 @@
 
 #Django Rest Framework
 from rest_framework import serializers
-from rest_framework.validators import UniqueValidator
+
+# Serializers
+from api.locations.serializers import CountryModelSerializer
 
 #Model
 from api.locations.models import City
 
 class CityModelSerializer(serializers.ModelSerializer):
     """City Model Serializer"""
+    country = CountryModelSerializer(read_only=True)
 
     class Meta:
         """Meta class"""
