@@ -69,6 +69,7 @@ LOCAL_APPS = [
     'api.users.apps.UsersAppConfig',
     'api.locations.apps.LocationsAppConfig',
     'api.guatudu.apps.GuatuduAppConfig',
+    'api.sliders.apps.SlidersAppConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
