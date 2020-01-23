@@ -1,5 +1,6 @@
 """City view"""
-#Django
+
+# Django
 from django.shortcuts import get_object_or_404
 
 # Django REST Framework

@@ -13,6 +13,7 @@ class CityModelSerializer(serializers.ModelSerializer):
     """ City Model Serializer. """
     country_id = serializers.IntegerField()
     name = serializers.CharField(max_length=150)
+    country = CountryModelSerializer(read_only=True)
 
     class Meta:
         """Meta class"""
@@ -22,4 +23,5 @@ class CityModelSerializer(serializers.ModelSerializer):
             'name',
             'image',
             'country_id',
+            'country',
         )
