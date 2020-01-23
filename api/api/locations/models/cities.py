@@ -11,7 +11,7 @@ from api.locations.models.countries import Country
 
 class City(BaseModel):
     """ City model. """
-    name = models.CharField(max_length = 150)
+    name = models.CharField(max_length=150)
     image = models.ImageField(upload_to='cities/images', max_length=100)
     country = models.ForeignKey(Country, on_delete=models.CASCADE)
 
