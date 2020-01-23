@@ -14,7 +14,7 @@ class UserProfile(BaseModel):
 
     picture = models.ImageField(
         'profile picture',
-        upload_to='users/pictures', 
+        upload_to='uploads/users/pictures', 
         blank=True,
         null=True
     )

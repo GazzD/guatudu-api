@@ -9,7 +9,7 @@ from api.utils.models import BaseModel
 class Country(BaseModel):
     """ Country model. """
     name = models.CharField(max_length = 150)
-    image = models.ImageField(upload_to='countries/images', max_length=100, blank=True, null = True)
+    image = models.ImageField(upload_to='uploads/countries/images', max_length=100, blank=True, null = True)
     
     def __str__(self):
         """ Return country string representation"""
