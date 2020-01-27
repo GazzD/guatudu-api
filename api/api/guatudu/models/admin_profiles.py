@@ -12,7 +12,7 @@ class AdminProfile(BaseModel):
 
     user = models.OneToOneField('users.User', on_delete=models.CASCADE)
     role = models.ForeignKey('users.Role', on_delete=models.CASCADE)
-    
+
     def __str__(self):
         """ Return Admin Profile string representation"""
         return str(self.user)
