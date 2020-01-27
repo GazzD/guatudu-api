@@ -4,7 +4,8 @@
 from django.shortcuts import get_object_or_404
 
 # Django REST Framework
-from rest_framework import viewsets
+from rest_framework import viewsets, status
+from rest_framework.response import Response
 
 # Serializers
 from api.sliders.serializers import SliderImageModelSerializer
@@ -17,3 +18,11 @@ class SliderImageViewSet(viewsets.ModelViewSet):
 
     queryset = SliderImage.objects.all()
     serializer_class = SliderImageModelSerializer
+
+    def create(self, request, *args, **kwargs):
+        
+        serializer = self.get_serializer(data=request.data, many=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
