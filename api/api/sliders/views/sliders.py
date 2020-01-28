@@ -9,7 +9,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 
 # Serializers
-from api.sliders.serializers import SliderModelSerializer, SliderImageModelSerializer
+from api.sliders.serializers import SliderModelSerializer, SliderImageModelSerializer, SliderMassAssignSerializer
 
 # Models
 from api.sliders.models import Slider
@@ -20,3 +20,15 @@ class SliderViewSet(viewsets.ModelViewSet):
 
     queryset = Slider.objects.all()
     serializer_class = SliderModelSerializer
+
+    @action(detail=False, methods=['post'])
+    def mass_assign(self, request):
+        """ Create a slider with several sliders in one request """
+
+        serializer = SliderMassAssignSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        slider = serializer.save()
+        data = {
+            'slider' : slider,
+        }
+        return Response(data, status=status.HTTP_201_CREATED)
