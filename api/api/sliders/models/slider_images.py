@@ -14,6 +14,7 @@ class SliderImage(BaseModel):
     url = models.ImageField(upload_to='uploads/sliders/images', max_length=100)
     link = models.CharField(max_length=255, blank=True, null=True)
     slider = models.ForeignKey(Slider, related_name='images', on_delete=models.CASCADE)
+    position = models.IntegerField(default=0)
 
     def __str__(self):
         """ Return SliderImage string representation"""

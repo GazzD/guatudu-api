@@ -4,7 +4,9 @@
 from rest_framework import serializers
 
 # Model
-from api.sliders.models import SliderImage
+from api.sliders.models import SliderImage, Slider
+
+# Serializers
 
 class SliderImageModelSerializer(serializers.ModelSerializer):
     """ Slider Image Model Serializer. """
@@ -18,4 +20,7 @@ class SliderImageModelSerializer(serializers.ModelSerializer):
             'url',
             'link',
             'slider_id',
+            'position',
         )
+
+
