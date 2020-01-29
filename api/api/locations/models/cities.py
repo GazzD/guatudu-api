@@ -13,7 +13,7 @@ class City(BaseModel):
     """ City model. """
     name = models.CharField(max_length=150)
     image = models.ImageField(upload_to='uploads/cities/images', max_length=100)
-    country = models.ForeignKey(Country, on_delete=models.CASCADE)
+    country = models.ForeignKey(Country, related_name='cities', on_delete=models.CASCADE)
 
     def __str__(self):
         """ Return city string representation"""
