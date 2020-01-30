@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('api.locations.urls', 'locations'), namespace='locations')),
     path('', include(('api.sliders.urls', 'sliders'), namespace='sliders')),
+    path('', include(('api.users.urls', 'users'), namespace='users')),
+    path('', include(('api.guatudu.urls', 'guatudu'), namespace='guatudu')),
 ]

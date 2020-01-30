@@ -2,12 +2,12 @@
 
 # Django
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractBaseUser
 
 # Utilities
 from api.utils.models import BaseModel
 
-class User(BaseModel, AbstractUser):
+class User(BaseModel, AbstractBaseUser):
     """ User model. """
 
     email = models.EmailField(
@@ -19,7 +19,6 @@ class User(BaseModel, AbstractUser):
     )
 
     facebook_id = models.CharField(blank=True, max_length=255)
-    password = models.CharField(blank=True, max_length=255)
     google_id = models.CharField(blank=True, max_length=255)
 
     USERNAME_FIELD = 'email'
@@ -31,7 +30,18 @@ class User(BaseModel, AbstractUser):
     def __str__(self):
         """ Return email"""
         return self.email
-    
+
     def get_short_name(self):
         """ Return email"""
         return self.email
+
+    def create(self, email, password):
+        """
+        Create and save a user with the given email, and password.
+        """
+        user = User()
+        user.email = email
+        user.set_password(password)
+        user.save()
+
+        return user

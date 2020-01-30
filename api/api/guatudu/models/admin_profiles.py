@@ -20,3 +20,12 @@ class AdminProfile(BaseModel):
     class Meta:
         db_table = 'admin_profiles'
     
+    def signup(data):
+        print('---------------------------------------------------')
+        print(data)
+        print('---------------------------------------------------')
+        profile = AdminProfile()
+        profile.user_id = data['user_id']
+        profile.role_id = data['role_id']
+        profile.save()
+        return profile
