@@ -13,7 +13,7 @@ class Business(BaseModel):
     """ Business model. """
 
     name = models.CharField(max_length=150)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='uploads/business')
     phone = models.CharField(max_length=32, blank=True, null=True)
     email = models.CharField(max_length=32, blank=True)
     rating = models.IntegerField(blank=True, null=True)

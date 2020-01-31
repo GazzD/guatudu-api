@@ -8,8 +8,10 @@ from rest_framework.routers import DefaultRouter
 
 # Views
 from api.guatudu.views.profiles import admins as admin_profile_views
+from api.guatudu.views import business as business_views
 
 router = DefaultRouter()
 router.register(r'profiles/admin', admin_profile_views.AdminProfileViewSet, basename='profiles/admin')
+router.register(r'business', business_views.BusinessViewSet, basename='business')
 
 urlpatterns = router.urls

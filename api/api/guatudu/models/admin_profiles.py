@@ -18,12 +18,11 @@ class AdminProfile(BaseModel):
         return str(self.user)
 
     class Meta:
+        """ Meta class """
         db_table = 'admin_profiles'
-    
+
     def signup(data):
-        print('---------------------------------------------------')
-        print(data)
-        print('---------------------------------------------------')
+        """ Manage the creation of profiles """
         profile = AdminProfile()
         profile.user_id = data['user_id']
         profile.role_id = data['role_id']

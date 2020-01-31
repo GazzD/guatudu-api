@@ -18,28 +18,23 @@ from api.users.models import User
 
 
 class AdminProfileViewSet(viewsets.ModelViewSet):
-    """AdminProfile viewset"""
+    """ AdminProfile viewset """
 
     queryset = AdminProfile.objects.all()
     serializer_class = AdminProfileModelSerializer
 
     @action(detail=False, methods=['post'])
     def signup(self, request):
-        """Sign Up AdminProfiles without profile. """
+        """ Sign Up AdminProfiles without profile. """
         user_serializer = UserSignUpSerializer(data=request.data)
         # Create user
         if user_serializer.is_valid(raise_exception=True):
             user = user_serializer.save()
-            print('***********USER CREATED**************')
-            print(user)
-            print('*************************')
             request.data['user_id'] = user['id']
             request.data.pop('password_confirmation')
             request.data.pop('password')
             request.data.pop('email')
-            print('===========REQUEST DATA===========================')
-            print(request.data)
-            print('======================================')
+
             # Create profile
             admin_profile_serializer = AdminProfileSignUpSerializer(data=request.data)
             if admin_profile_serializer.is_valid(raise_exception=True):
