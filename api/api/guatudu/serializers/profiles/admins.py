@@ -24,7 +24,7 @@ class AdminProfileModelSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'user',
-            'role'
+            'role' 
         )
 
 class AdminProfileSignUpSerializer(serializers.Serializer):
@@ -34,6 +34,7 @@ class AdminProfileSignUpSerializer(serializers.Serializer):
     role_id = serializers.CharField(read_only=False)
 
     def create(self, validated_data):
+        """Hanadle the creation of admin profiles """
         profile = AdminProfile.signup(validated_data)
         serializer = UserModelSerializer(profile.user)
         validated_data['user'] = serializer.data
