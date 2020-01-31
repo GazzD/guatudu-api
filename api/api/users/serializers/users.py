@@ -19,7 +19,6 @@ class UserModelSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'email',
-            'password',
             'facebook_id',
             'google_id'
         )
