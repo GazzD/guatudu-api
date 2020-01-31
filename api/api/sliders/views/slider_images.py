@@ -19,16 +19,3 @@ class SliderImageViewSet(viewsets.ModelViewSet):
 
     queryset = SliderImage.objects.all()
     serializer_class = SliderImageModelSerializer
-
-    
-    
-    # @action(detail=True, methods=['post'])
-    # def images(self, request, pk=None):
-    #     user = self.get_object()
-    #     serializer = SliderImageSerializer(data=request.data)
-    #     if serializer.is_valid():
-    #         user.save()
-    #         return Response({'status': 'images saved'})
-    #     else:
-    #         return Response(serializer.errors,
-    #                         status=status.HTTP_400_BAD_REQUEST)

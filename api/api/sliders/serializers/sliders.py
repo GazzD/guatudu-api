@@ -39,7 +39,6 @@ class SliderMassAssignSerializer(serializers.Serializer):
         slider = Slider()
         slider.save()
         for image in data['images']:
-            
             slider_image = SliderImage()
             file_system = FileSystemStorage()
             name = 'uploads/sliders/images/'+image.name
