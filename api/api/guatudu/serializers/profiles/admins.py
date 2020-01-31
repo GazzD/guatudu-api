@@ -9,32 +9,36 @@ from api.users.models import User, Role
 from api.guatudu.models import AdminProfile
 
 # Serializers
-from api.users.serializers.users import UserSignUpSerializer
+from api.users.serializers.users import UserSignUpSerializer, UserModelSerializer
+from api.users.serializers.roles import RoleModelSerializer
 
 class AdminProfileModelSerializer(serializers.ModelSerializer):
     """ Admin Profile model serializer """
 
-    user = serializers.ModelField(User, read_only=False)
-    role = serializers.ModelField(Role, read_only=False)
+    user = UserModelSerializer(read_only=False)
+    role = RoleModelSerializer(read_only=False)
 
     class Meta():
         """ Meta class. """
         model = AdminProfile
         fields = (
+            'id',
             'user',
             'role'
         )
 
 class AdminProfileSignUpSerializer(serializers.Serializer):
-
     """This handles the creation of users with an admin profile """
+
     user_id = serializers.CharField(read_only=False)
     role_id = serializers.CharField(read_only=False)
 
     def create(self, validated_data):
         profile = AdminProfile.signup(validated_data)
-        serializer = AdminProfileModelSerializer(instance=profile)
-        return serializer.data
+        serializer = UserModelSerializer(profile.user)
+        validated_data['user'] = serializer.data
+        validated_data['user'].pop('password')
+        return validated_data
  
     def update(self, instance, validated_data):
         """Update user email or password """
