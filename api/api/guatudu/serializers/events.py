@@ -14,7 +14,12 @@ from api.sliders.serializers.sliders import SliderModelSerializer
 class EventModelSerializer(serializers.ModelSerializer):
     """ Event Model serializer. """
 
-  
+    city = CityModelSerializer(read_only=True)
+    city_id = serializers.IntegerField()
+    slider = SliderModelSerializer(read_only=True)
+    slider_id = serializers.IntegerField()
+    business = BusinessModelSerializer(read_only=True)
+    business_id = serializers.IntegerField()
     
     class Meta():
         """Meta class"""
@@ -23,12 +28,15 @@ class EventModelSerializer(serializers.ModelSerializer):
             'id',
             'name',
             'description',
-            'main_image',
+            'status',
             'start_date',
             'end_date',
+            'price',
+            'main_image',
             'city',
             'business',
-            'status',
             'slider',
-            'price',
+            'business_id',
+            'city_id',
+            'slider_id',
         )

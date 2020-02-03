@@ -11,7 +11,7 @@ from rest_framework.response import Response
 # Serializers
 from api.sliders.serializers import SliderImageModelSerializer, SliderMassAssignSerializer
 
-#Models
+# Models
 from api.sliders.models import SliderImage
 
 class SliderImageViewSet(viewsets.ModelViewSet):
