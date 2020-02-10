@@ -33,7 +33,7 @@ environ.Env.read_env()
 SECRET_KEY = '-4ln69&hzv259jn75z-(uc(39%d#n5)!hiv%4+fs3uy3po!6no'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Language and timezone
 TIME_ZONE = 'Europe/Madrid'
@@ -43,7 +43,7 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Urls 
 ROOT_URLCONF = 'api.urls'
