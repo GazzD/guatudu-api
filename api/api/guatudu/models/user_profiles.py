@@ -4,6 +4,9 @@
 from django.db import models
 from django.core.validators import RegexValidator
 
+# Models
+from api.guatudu.models import UserBusiness
+
 # Utilities
 from api.utils.models import BaseModel
 
@@ -38,7 +41,7 @@ class UserProfile(BaseModel):
     )
 
     city = models.ForeignKey('locations.City', on_delete=models.CASCADE)
-
+    business = models.ManyToManyField("guatudu.Business", through=UserBusiness)
     def __str__(self):
         """ Return user string representation"""
         return str(self.user)

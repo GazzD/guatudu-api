@@ -1,4 +1,4 @@
-"""AdminBusiness model"""
+"""User Business model"""
 
 # Django
 from django.db import models
@@ -6,10 +6,10 @@ from django.db import models
 # Utilities
 from api.utils.models import BaseModel
 
-class AdminBusiness(BaseModel):
-    """ AdminBusiness model. """
+class UserBusiness(BaseModel):
+    """ UserBusiness model. """
 
-    admin = models.ForeignKey('guatudu.AdminProfile', on_delete=models.CASCADE)
+    user = models.ForeignKey('guatudu.UserProfile', on_delete=models.CASCADE)
     business = models.ForeignKey('guatudu.Business', on_delete=models.CASCADE)
     
     def __str__(self):
